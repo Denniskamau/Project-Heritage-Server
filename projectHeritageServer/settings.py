@@ -50,7 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     'graphql_jwt.middleware.JSONWebTokenMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'projectHeritageServer.urls'
@@ -124,6 +125,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 GRAPHENE = {
     'SCHEMA': 'projectHeritageServer.schema.schema',
+    'MIDDLEWARES': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
 }
 
 AUTHENTICATION_BACKENDS = [
