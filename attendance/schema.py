@@ -12,5 +12,25 @@ class Query(graphene.ObjectType):
     def resolve_classes(self,info,**kwargs):
         return Attendance.objects.all()
 
-class Mutation():
-    pass
+
+class CreateAttendace(graphene.Mutation):
+    id = graphene.Int()
+    isPresent = graphene.Boolean()
+    childName = graphene.String()
+
+    class Arguments:
+        isPresent = graphene.Boolean()
+        childName = graphene.String()
+
+    def mutate(self,info,isPresent,childName):
+        newAttendace = Attendance(isPresent=isPresent,childName=childName)
+        newAttendace.save()
+
+        return CreateAttendace(
+            id=newAttendace.id,
+            isPresent = newAttendace.isPresent,
+            childName = newAttendace.childName
+        )
+
+class Mutation(graphene.ObjectType):
+    create_attendance = CreateAttendace.Field()
