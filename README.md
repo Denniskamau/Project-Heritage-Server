@@ -1,24 +1,36 @@
-# Project-Heritage-Server
-A server for Project Heritage application
+# Project Heritage API
 
-## Technologies
+---
 
-1)Django
+> A server for Project Heritage application
 
-2)GraphQl
+## Prerequisites
 
-## Setup
+- Python v 3.6
+- SQLite 3
+- Python virtaulenv
+- pip
+- graphql
 
-Create virtual environment `python3.6 venv venv`
+## Installation
 
-Activate the virtual env `source venv/bin/activate`
+```bash
+create virtualenv
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
 
-Install the requirements `pip install -r requirements.txt`
+## Author
 
-Run the migration `python manage.py migrate`
+> [Dennis Kamau](mailto:denniskamau3@gmail.com)
 
-Run the server `python manage.py runserver`
+### Contributors
 
-## Endpoint
+> [Victor Kariuki](mailto:karizvic@gmail.com)
 
-To access the graphql Endpoint `localhost:8000/graphql/`
+
+## License
+
+> MIT License
