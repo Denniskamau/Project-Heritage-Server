@@ -7,10 +7,11 @@
 ## Prerequisites
 
 - Python v 3.6
-- SQLite 3
+- Postgresql
 - Python virtaulenv
 - pip
 - graphql
+- heroku
 
 ## Installation
 
@@ -18,8 +19,22 @@
 create virtualenv
 source venv/bin/activate
 pip install -r requirements.txt
+mv example.env .env
 python manage.py migrate
 python manage.py runserver
+```
+
+## Deployment
+
+> We are using heroku to deploy
+
+```bash
+heroku create
+heroku addons:add heroku-postgresql:dev
+heroku addons:add newrelic
+heroku pg:promote DATABASE_URL
+heroku config:set ENVIRONMENT=PRODUCTION
+heroku config:set DJANGO_SECRET_KEY=`./manage.py generate_secret_key`
 ```
 
 ## Author
