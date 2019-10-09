@@ -24,6 +24,10 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## Database Schema
+
+<img src="project-heritage-db.png">
+
 ## Deployment
 
 > We are using heroku to deploy
