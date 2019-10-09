@@ -1,2 +1,2 @@
-web: gunicorn bootcamp.wsgi --log-file -
+web: gunicorn projectHeritageServer.wsgi --log-file -
 
