@@ -24,17 +24,22 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## Database Schema
+
+<img src="project-heritage-db.png">
+
 ## Deployment
 
 > We are using heroku to deploy
 
 ```bash
-heroku create
-heroku addons:add heroku-postgresql:dev
-heroku addons:add newrelic
-heroku pg:promote DATABASE_URL
-heroku config:set ENVIRONMENT=PRODUCTION
+heroku login
+heroku create demo-bootcamp
+heroku addons:create heroku-postgresql:hobby-dev
+heroku run python manage.py migrate
 heroku config:set DJANGO_SECRET_KEY=`./manage.py generate_secret_key`
+heroku run python manage.py migrate
+
 ```
 
 ## Author
