@@ -25,6 +25,7 @@ deploy:
   app: project-heritage-api
   on:
     repo: Victor-Kariuki/project-heritage-api
+    branch: develop
 
 branches:
   only:
