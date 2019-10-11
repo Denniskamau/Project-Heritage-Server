@@ -1,5 +1,8 @@
 # Project Heritage API
 
+[![Travis CI][build-badge]][build]
+[![GNU][license-badge]][license]
+
 ---
 
 > A server for Project Heritage application
