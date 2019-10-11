@@ -15,8 +15,13 @@ script:
 deploy:
   provider: heroku
   buildpack: python
-  api_key: d67e4a1f-ad87-4fb8-a099-59100cd6d29a
+  api_key: HEROKU-API-KEY
   strategy: git
   app: project-heritage-api
   on:
     repo: Victor-Kariuki/project-heritage-api
+
+branches:
+  only:
+  - master
+  - stable
