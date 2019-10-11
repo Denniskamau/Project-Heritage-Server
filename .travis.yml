@@ -20,7 +20,7 @@ script:
 deploy:
   provider: heroku
   buildpack: python
-  api_key: $HEROKU-API-KEY
+  api_key: $HEROKU_API_KEY
   strategy: git
   app: project-heritage-api
   on:
