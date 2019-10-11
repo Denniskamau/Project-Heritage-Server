@@ -1,2 +1,2 @@
-web: gunicorn projectHeritageServer.wsgi --log-file -
+web: gunicorn project-heritage-api.wsgi --log-file -
 

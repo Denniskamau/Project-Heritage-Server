@@ -1,5 +1,8 @@
 # Project Heritage API
 
+[![Build Status](https://travis-ci.com/Victor-Kariuki/project-heritage-api.svg?token=iK2kccgvt3rzpDGqpv3o&branch=develop)](https://travis-ci.com/Victor-Kariuki/project-heritage-api)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 ---
 
 > A server for Project Heritage application

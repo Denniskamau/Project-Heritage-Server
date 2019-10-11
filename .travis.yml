@@ -1,0 +1,33 @@
+language: python
+# Set the python versions
+python: '3.6'
+# Addons
+addons:
+  postgresql: '9.6'
+
+#env
+DATABASE_URL: $DATABASE_URL
+DEBUG: $DEBUG
+SECRET_KEY: $SECRET_KEY
+
+# Install pip dependencies
+install:
+- pip install -r requirements.txt
+
+script:
+- python manage.py migrate
+
+deploy:
+  provider: heroku
+  buildpack: python
+  api_key: $HEROKU_API_KEY
+  strategy: git
+  app: project-heritage-api
+  on:
+    repo: Victor-Kariuki/project-heritage-api
+    branch: develop
+
+branches:
+  only:
+  - master
+  - develop
