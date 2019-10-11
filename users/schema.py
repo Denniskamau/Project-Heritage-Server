@@ -4,28 +4,28 @@ import graphene
 from graphene_django import DjangoObjectType
 
 
-# class UserType(DjangoObjectType):
-#     class Meta:
-#         model = get_user_model()
+class UserType(DjangoObjectType):
+    class Meta:
+        model = get_user_model()
 
 
-# class CreateUser(graphene.Mutation):
-#     user = graphene.Field(UserType)
+class CreateUser(graphene.Mutation):
+    user = graphene.Field(UserType)
 
-#     class Arguments:
-#         username = graphene.String(required=True)
-#         password = graphene.String(required=True)
-#         email = graphene.String(required=True)
+    class Arguments:
+        username = graphene.String(required=True)
+        password = graphene.String(required=True)
+        email = graphene.String(required=True)
 
-#     def mutate(self, info, username, password, email):
-#         user = get_user_model()(
-#             username=username,
-#             email=email,
-#         )
-#         user.set_password(password)
-#         user.save()
+    def mutate(self, info, username, password, email):
+        user = get_user_model()(
+            username=username,
+            email=email,
+        )
+        user.set_password(password)
+        user.save()
 
-#         return CreateUser(user=user)
+        return CreateUser(user=user)
 
 
 class Query(graphene.ObjectType):
@@ -41,7 +41,6 @@ class Query(graphene.ObjectType):
     #         raise Exception('Not logged in!')
 
     #     return user
-    pass
+
 class Mutation(graphene.ObjectType):
-    # create_user = CreateUser.Field()
-    pass
+    create_user = CreateUser.Field()
