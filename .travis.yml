@@ -5,6 +5,11 @@ python: '3.6'
 addons:
   postgresql: '9.6'
 
+#env
+DATABASE_URL: $DATABASE_URL
+DEBUG: $DEBUG
+SECRET_KEY: $SECRET_KEY
+
 # Install pip dependencies
 install:
 - pip install -r requirements.txt
@@ -15,7 +20,7 @@ script:
 deploy:
   provider: heroku
   buildpack: python
-  api_key: HEROKU-API-KEY
+  api_key: $HEROKU-API-KEY
   strategy: git
   app: project-heritage-api
   on:
@@ -24,4 +29,4 @@ deploy:
 branches:
   only:
   - master
-  - stable
+  - develop
