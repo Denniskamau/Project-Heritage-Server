@@ -13,6 +13,7 @@ class Query(graphene.ObjectType):
         return Attendance.objects.all()
 
 
+
 class CreateAttendace(graphene.Mutation):
     id = graphene.Int()
     isPresent = graphene.Boolean()

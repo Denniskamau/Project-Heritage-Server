@@ -1,5 +1,5 @@
 """
-WSGI config for project-heritage-api project.
+WSGI config for phappserver project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

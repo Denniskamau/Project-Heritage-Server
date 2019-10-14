@@ -33,6 +33,7 @@ class Query(graphene.ObjectType):
         return PhClass.objects.all()
 
 
+
 """Create a mutation class for the fields to be resolved"""
 class Mutation(graphene.ObjectType):
     create_class = CreateClass.Field()
