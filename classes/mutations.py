@@ -78,3 +78,21 @@ class UpdateClass(graphene.Mutation):
             )
         else:
             raise Exception('No class with that ID')
+
+class DeleteClass(graphene.Mutation):
+    """Delete Existing record"""
+    id = graphene.Int()
+
+    class Arguments:
+        id = graphene.Int()
+
+    def mutate(self,info,**kwargs):
+        phclassInstance = PhClass.objects.get(pk=kwargs['id'])
+        if phclassInstance:
+            phclassInstance.delete()
+            message = 'Delete succesful'
+            return DeleteClass(
+                id = kwargs['id']
+            )
+        else:
+            raise Exception('No class with that ID')

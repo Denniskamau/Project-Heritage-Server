@@ -3,7 +3,7 @@ from graphene_django import DjangoObjectType
 from .models import PhClass
 
 
-from .mutations import CreateClass,UpdateClass
+from .mutations import CreateClass,UpdateClass,DeleteClass
 
 
 class PhClassType(DjangoObjectType):
@@ -24,3 +24,4 @@ class Query(graphene.ObjectType):
 class Mutation(graphene.ObjectType):
     create_class = CreateClass.Field()
     update_class = UpdateClass.Field()
+    delete_class = DeleteClass.Field()
