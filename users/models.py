@@ -30,7 +30,7 @@ class Child(models.Model):
     age = models.IntegerField(default=3)
     dob = models.DateTimeField(default=datetime.datetime.now)
     is_active = models.BooleanField(default=False)
-    attendace = models.ForeignKey('attendance.Attendance',default=1,on_delete=models.CASCADE)
+    # attendace = models.ForeignKey('attendance.Attendance',default=1,on_delete=models.CASCADE)
     phclass = models.ForeignKey('classes.PhClass',default=1,on_delete=models.CASCADE)
     progresreport= models.ForeignKey('ProgressReport',on_delete=models.CASCADE,null=True)
     # ph_class_id = models.ForeignKey('classes.PhClass',on_delete=models.CASCADE)
