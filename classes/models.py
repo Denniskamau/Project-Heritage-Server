@@ -1,23 +1,11 @@
 from django.db import models
 
-"""
-Admin(facilitator | curiculum developers | IT Support | child) APP
-user-types
-
-
-TASK
-    - Facilitator (id)
-    - minAge = models.IntegerField()
-    - maxAge = models.IntegerField()
-"""
-
 # Create your models here.
 class PhClass(models.Model):
-    # enumration
-
     ageGroup =models.CharField(max_length= 30)
-    facilitator = models.CharField(max_length=200,blank=True)
+    class_designation = models.CharField(max_length =64,default='CLASS A')
+    name = models.CharField(max_length=64,default='N/A')
+    min_age = models.IntegerField(default=3)
+    max_age = models.IntegerField(default=6)
 
-# class Facilitators(models.Model):
-#     firstname = models.CharField(max_length=64)
-#     lastname = models.CharField(max_length=64)
+
